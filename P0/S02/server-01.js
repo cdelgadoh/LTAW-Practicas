@@ -1,8 +1,11 @@
-const http = require('http');
+//-- Importar el módulo 'http'. 
+// Node incluye el modulo si lo tienes instalado 
+// y lo puedes  utilizar.
+const http = require('http'); //declarar que los quieres usar.
 
-for (p in http) {
-    console.log("Propiedad: " + p);
-}
+//for (p in http) {
+//    console.log("Propiedad: " + p);
+//}
 
 //-- Crear el servidor
 const server = http.createServer();
