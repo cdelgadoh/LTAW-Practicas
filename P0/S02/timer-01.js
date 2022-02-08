@@ -8,6 +8,8 @@ function tarea1() {
 
 
 //-- Llamada retardada mediante temporizador
+// Ejecuta funcion que le pass como parametro cuando transcurran x ms.
+// Solo se ejecuta 1 vez
 //-- Cuando transcurran 1000 ms se llama a la función tarea 1
 setTimeout(tarea1, 1000);
 
@@ -23,12 +25,12 @@ console.log("Esperando a que terminen las tareas");
 //-- Esta función de retrollamada se invoca cada 200ms
 //-- Se guarda su identificador en la variable id par
 //-- poder quitar el temporizador con ClearInterval 
-let id = setInterval( () => {
+let id = setInterval( () => { //Cosas eriodicas, cada x tiempo.
     console.log("Tic...");
 }, 200 );
 
 //-- Al cabo de 3 segundos se desactiva el temporizador
 setTimeout( ()=> {
-  clearInterval(id)
+  clearInterval(id) //Parar el temporizador.
   console.log("Stop!");
 }, 3000);
