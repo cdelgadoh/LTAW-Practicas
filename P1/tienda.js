@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
 
   //-- Mensaje del cuerpo
-  res.write("Soy tu tienda on-line\n");
+  res.write("Tienda on-line\n");
 
   //-- Terminar la respuesta y enviarla
   res.end();
