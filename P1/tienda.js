@@ -1,17 +1,25 @@
-// PRACTICA 1: TIENDA ON-LINE
+// Practica 1: Tienda on-line
 
 //-- Importo los modulos http y fs
 const http = require('http');
 const fs = require('fs');
+const url = require('url');
 
 //-- Definir el puerto a utilizar
-const PUERTO = 9090;
+const Puerto = 9090;
+
+//-- Indicamos que se ha arrancado del servidor
+console.log("Arrrancando el servidor...");
 
 //-- Crear el servidor
 const server = http.createServer((req, res) => {
 
   //-- Indicamos que se ha recibido una petición
   console.log("Petición recibida!");
+
+  //-- Construir el objeto url con la url de la solicitud
+  
+
 
   //-- Cabecera que indica el tipo de datos del
   //-- cuerpo de la respuesta: Texto plano
@@ -25,6 +33,7 @@ const server = http.createServer((req, res) => {
 });
 
 //-- Activar el servidor: 
-server.listen(PUERTO);
+server.listen(Puerto);
 
-console.log("Tienda on-line activada!. Escuchando en puerto: " + PUERTO); 
+//-- Indicamos que se ha iniciado el servidor
+console.log("Tienda on-line activada!. Escuchando en puerto: " + Puerto); 
