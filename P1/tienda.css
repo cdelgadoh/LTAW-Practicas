@@ -9,3 +9,23 @@ h1{
     color: black;
 
 }
+#Logocarro{
+    width: 45px; 
+    height: 35px;
+
+}
+#Barra{
+    text-align:center;
+    background-color:bisque;
+    margin: 20px 100px 20px 100px;
+    border-width: 3px;
+    border-radius: 60px;
+}
+
+b{
+    padding-left: 80px;
+    padding-right: 80px;
+    text-align: center;
+    
+}
+
