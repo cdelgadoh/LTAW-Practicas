@@ -1,29 +1,70 @@
-
-
-h1{
-    font-family: "Lucida Handwriting", cursive;
-    text-align: center;
-    font-size: 30px;
-    color: black;
-
+body {
+    background-color: black;
 }
-#Logocarro{
-    width: 45px; 
-    height: 35px;
-
+body::-webkit-scrollbar {
+    width: 12px;
 }
-#Barra{
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(128, 175, 177);
+    border-radius: 50px;
+}
+h3{
+    color: #d4f0ed;
+    font-family: 'Itim', cursive;
+}
+h5{
+    color: #0cecda;
+    font-family: 'Itim', cursive;
+}
+#bloques{
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: auto;
     text-align:center;
-    background-color:bisque;
-    margin: 20px 100px 20px 100px;
-    border-width: 3px;
-    border-radius: 60px;
+    width: 70%; 
+       
+ }
+#izquierda {
+    float: left;
+    width: 45%;
+    margin: 1px;
+    border-radius: 25%;
+    background:#b5ebeba1
 }
-
-b{
-    padding-left: 80px;
-    padding-right: 80px;
-    text-align: center;
+#derecha {
+    float: right;
+    width: 53%;
+    margin: 1px;
     
 }
+
+textarea {
+    width: 40%;
+    margin-top: auto;
+    background-color: peachpuff;
+    margin-left: 150px;
+    font-weight: bold;
+    line-height: 1;
+    color: #666666;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px outset #1e7f83;
+    resize: none;
+}
+button {
+    background-color: #af3773;
+    opacity: 0.7;
+    border: none;
+    color: white;
+    padding: 3px 3px;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+
 
