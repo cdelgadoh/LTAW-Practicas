@@ -59,22 +59,28 @@ h5{
     height: 35px;
 }
 #P1{
-    width: 60px; 
-    height: 60px;
+    width: 100px; 
+    height: 100px;
+    margin: 5px;
+    margin-top: 50px;
 }
 #P2{
-    width: 60px; 
-    height: 60px;
+    width: 100px; 
+    height: 100px;
+    margin: 5px;
     
 }
 #P3{
-    width: 60px; 
-    height: 60px;
+    width: 100px; 
+    height: 100px;
+    margin: 5px;
 }
 #P4{
-    width: 60px; 
-    height: 60px;
+    width: 100px; 
+    height: 100px;
+    margin: 5px;
 }
+
 
 
 
