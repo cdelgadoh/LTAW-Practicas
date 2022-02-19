@@ -1,0 +1,40 @@
+h3{
+    color: #d4f0ed;
+    font-family: 'Itim', cursive;
+}
+h4{
+    color: #0cecda;
+    font-family: 'Itim', cursive;
+}
+
+#izquierda {
+    float: left;
+    width: 45%;
+    margin: 1px;
+    border-radius: 25%;
+}
+#derecha {
+    float: right;
+    width: 53%;
+    margin: 1px;
+    
+}
+
+#Carro{
+    width: 45px; 
+    height: 35px;
+}
+
+#Home{
+    width: 45px; 
+    height: 35px;
+}
+
+#Search{
+    width: 45px; 
+    height: 35px;
+}
+#Contact{
+    width: 45px; 
+    height: 35px;
+}

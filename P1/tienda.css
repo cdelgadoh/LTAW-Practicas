@@ -32,7 +32,6 @@ h5{
     width: 45%;
     margin: 1px;
     border-radius: 25%;
-    background:#b5ebeba1
 }
 #derecha {
     float: right;
@@ -41,30 +40,6 @@ h5{
     
 }
 
-textarea {
-    width: 40%;
-    margin-top: auto;
-    background-color: peachpuff;
-    margin-left: 150px;
-    font-weight: bold;
-    line-height: 1;
-    color: #666666;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px outset #1e7f83;
-    resize: none;
-}
-button {
-    background-color: #af3773;
-    opacity: 0.7;
-    border: none;
-    color: white;
-    padding: 3px 3px;
-    text-align: center;
-    font-size: 15px;
-    margin-left: 200px;
-    margin-top: 10px;
-}
 #Carro{
     width: 45px; 
     height: 35px;
@@ -83,5 +58,23 @@ button {
     width: 45px; 
     height: 35px;
 }
+#P1{
+    width: 60px; 
+    height: 60px;
+}
+#P2{
+    width: 60px; 
+    height: 60px;
+    
+}
+#P3{
+    width: 60px; 
+    height: 60px;
+}
+#P4{
+    width: 60px; 
+    height: 60px;
+}
+
 
 
