@@ -1,4 +1,9 @@
-h3{
+
+h5{
+    display: inline-flex;
+
+}
+h2{
     color: #d4f0ed;
     font-family: 'Itim', cursive;
 }
@@ -38,7 +43,4 @@ h4{
     width: 45px; 
     height: 35px;
 }
-#Productos{
-    width: 60px; 
-    height: 60px;
-}
+
