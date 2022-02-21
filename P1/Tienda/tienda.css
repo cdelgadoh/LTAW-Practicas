@@ -5,8 +5,10 @@ h3{
     font-size: 30px;
 }
 h5{
-    color: #0cecda;
+    color: #572685;
     font-family: 'Itim', cursive;
+    font-size: 15px;
+
 }
 #bloques{
     justify-content: center;
@@ -48,34 +50,31 @@ h5{
     height: 35px;
 }
 #P1{
-    width: 100px; 
-    height: 100px;
+    width: 200px; 
+    height: 200px;
     margin: 5px;
 }
 #P2{
-    width: 100px; 
-    height: 100px;
+    width: 200px; 
+    height: 200px;
     margin: 5px;
     
 }
 #P3{
-    width: 100px; 
-    height: 100px;
+    width: 200px; 
+    height: 200px;
     margin: 5px;
 }
 #P4{
-    width: 100px; 
-    height: 100px;
+    width: 200px; 
+    height: 200px;
     margin: 5px;
 }
 #Productos{
     display: flex;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 20%;
     text-align:center;
-    background-color:rgba(255, 255, 255, 0.493);
-    border-width: 3px;
-    border-radius: 60px;
 
 }
 
