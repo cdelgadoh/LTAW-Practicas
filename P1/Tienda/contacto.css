@@ -32,10 +32,11 @@ h5{
     height: 35px;
 }
 textarea {
-    width: 50%;
+    width: 40%;
     margin-top: auto;
     background-color: peachpuff;
     margin-left: 200px;
+    margin-right: 200px;
     font-weight: bold;
     line-height: 1;
     color: #666666;
@@ -52,7 +53,6 @@ button {
     padding: 3px 3px;
     text-align: center;
     font-size: 15px;
-    margin-left: 400px;
     margin-top: 10px;
 }
 
@@ -60,4 +60,7 @@ button {
     width: 45px; 
     height: 35px;
 
+}
+#form{
+    float: left;
 }
