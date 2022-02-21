@@ -13,6 +13,24 @@ h3{
 h5{
     text-align: center;
 }
+#Carro{
+    width: 45px; 
+    height: 35px;
+}
+
+#Home{
+    width: 45px; 
+    height: 35px;
+}
+
+#Search{
+    width: 45px; 
+    height: 35px;
+}
+#Contact{
+    width: 45px; 
+    height: 35px;
+}
 textarea {
     width: 50%;
     margin-top: auto;
@@ -42,17 +60,4 @@ button {
     width: 45px; 
     height: 35px;
 
-}
-#Barra{
-    text-align:center;
-    background-color:bisque;
-    margin: 20px 100px 20px 100px;
-    border-width: 3px;
-    border-radius: 60px;
-}
-b{
-    padding-left: 80px;
-    padding-right: 80px;
-    text-align: center;
-    
 }
