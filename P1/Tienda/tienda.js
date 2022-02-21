@@ -1,73 +1,86 @@
 // Practica 1: Tienda on-line
 
-//-- Importo los modulos http y fs
+//-- Importar los modulos http, fs y url
 const http = require('http');
 const fs = require('fs');
+const url = require('url');
 
 //-- Definir el puerto a utilizar
 const Puerto = 9090;
 
-//-- Indicamos que se ha arrancado del servidor
-console.log("Arrrancando el servidor...");
+//-- Mensaje de arranque
+console.log("Arrancando servidor...");
 
-//-- Crear el servidor
-const server = http.createServer((req, res) => {
+//-- Crear el sevidor
+const server = http.createServer(function (req, res) {
 
-  //-- Indicamos que se ha recibido una petición
-  console.log("Petición recibida!");
+  //-- Indicar que se ha recibido una peticion
+  console.log("Peticion Recibida");
 
-  //-- Construir el objeto url con la url de la solicitud
-  const myURL = new URL(req.url, 'http://' + req.headers['host']);
-    console.log("URL solicitada: " + myURL.pathname);
+  //-- Crear el objeto URL del mensaje de solitud (req)
+  //-- y coger el recurso (url)
+  let myURL = url.parse(req.url, true);
 
-    let page = '' //-- Página que queremos cargar
-    if (myURL.pathname == "/") { //-- Cuando lanzamos nuestra página web
-        page = './tienda.html'
-    } else if (myURL.pathname == "/ls") { // Listado con todos los ficheros de la practica
-        page = './ls.html'
-    } else { // -- En cualquier otro caso
-        page = '.' + myURL.pathname;
-    }
+  //-- Escribir en consola la ruta de nuestro recurso
+  console.log("Recurso recibido: " + myURL.pathname);
 
-    console.log("Página solicitada: " + page)
+  //-- Definir la variable fichero
+  let filename = "";
 
-    content = page.split(".").pop()
-    console.log("Contenido de la página: " + content);
+  //-- Obtener la ruta (pathname)
+  //-- Comprobar si la ruta es elemento raiz
+  //-- Obtener fichero a devolver
+  if (myURL.pathname == "/"){
+    filename += "tienda.html";  //-- Abrir la pagina principal
+  }else{
+    filename += myURL.pathname.substr(1);  //-- Abrir el fichero solicitado
+  }
 
-    fs.readFile(page, (err, data) => {
-        let code = 200;
-        let code_msg = "OK";
-        let content_type = "text/html";
+  //-- Ruta asignada
+  console.log('Fichero a devolver: ' + filename);
+  
+  //-- Extraer el tipo de mime que es la ruta
+  //-- y quedarse con la extenson
+  let ext = filename.split(".")[1];
 
-        if (err) { // Mostramos la página de error
-            console.log('ha habido error')
-            var HOME_HTML = fs.readFileSync('./error.html', 'utf-8');
-            res.statusCode = 404;
-            res.statusMessage = "Ha habido un error";
-            res.setHeader('Content-Type', "text/html");
-            res.write(HOME_HTML);
-            return res.end();
-        }
-        switch (content) {
-            case 'html':
-                content_type = "text/html";
-            case 'css':
-                content_type = "text/css";
-            default:
-                content_type = content;
-        }
-        res.statusCode = code;
-        res.statusMessage = code_msg;
-        res.setHeader('Content-Type', content_type);
-        res.write(data);
-        res.end();
-    });
+  //-- Escribir el tipo de mime solicitado
+  console.log('Tipo de dato pedido: ' + ext);
 
+  //-- Definir los tipos de mime
+  const tiendaType = {
+    "html" : "text/html",
+    "css"  : "text/css",
+    "jpg"  : "image/jpg",
+    "JPG"  : "image/jpg",
+    "jpeg" : "image/jpeg",
+    "png"  : "image/png",
+    "gif"  : "image/gif",
+    "js"   : "text/js",
+  };
+
+  //-- Asignar que tipo de mime leer
+  let tienda = tiendaType[ext];
+
+  fs.readFile(filename, function(err, data){
+    //-- Controlar si la pagina es no encontrada.
+    //-- Devolver pagina de error personalizada, 404 NOT FOUND
+    if ((err) || (filename == 'error.html')){
+      res.writeHead(404, {'Content-Type': tienda});
+      console.log("Not found");
+    }else{
+      //-- Todo correcto
+      //-- Mandar el mensaje 200 OK
+      res.writeHead(200, {'Content-Type': tienda});
+      console.log("200 OK");
+    } 
+    //-- Enviar los datos del fichero solicitado  
+    res.write(data);
+    res.end();
+  });
 });
 
-
-//-- Activar el servidor: 
+//-- Activar el servidor
 server.listen(Puerto);
 
-//-- Indicamos que se ha iniciado el servidor
-console.log("Tienda on-line activada!. Escuchando en puerto: " + Puerto); 
+//-- Mensaje de inicio
+console.log("Escuchando en puerto: " + Puerto);

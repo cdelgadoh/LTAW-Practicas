@@ -1,16 +1,4 @@
-body {
-    background-color: white;
-}
-body::-webkit-scrollbar {
-    width: 12px;
-}
-body::-webkit-scrollbar-track {
-    background: rgb(0, 0, 0);
-}
-body::-webkit-scrollbar-thumb {
-    background-color: rgb(128, 175, 177);
-    border-radius: 50px;
-}
+
 h3{
     color: #d4f0ed;
     font-family: 'Itim', cursive;
@@ -62,7 +50,6 @@ h5{
     width: 100px; 
     height: 100px;
     margin: 5px;
-    margin-top: 50px;
 }
 #P2{
     width: 100px; 
@@ -80,7 +67,15 @@ h5{
     height: 100px;
     margin: 5px;
 }
+#Productos{
+    display: flex;
+    margin-top: 20%;
+    margin-left: 20%;
+    text-align:center;
+    background-color:rgba(255, 255, 255, 0.493);
+    border-width: 3px;
+    border-radius: 60px;
 
-
+}
 
 
