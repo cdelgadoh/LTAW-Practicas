@@ -1,9 +1,9 @@
 // Practica 1: Tienda on-line
 
 const http = require('http');
-const url = require('url');
+const url = require('url'); //para parsear
 const fs = require('fs');
-const PUERTO = 8080
+const PUERTO = 9090
 
 //-- Configurar y lanzar el servidor. Por cada peticion recibida
 //-- se imprime un mensaje en la consola
@@ -21,9 +21,9 @@ http.createServer((req, res) => {
     filename += "tienda.html"
     mime = "text/html"
   }else{
-    //HAY MAS DE UNA / SIGNIFICA QUE ESTA EN OTRA CARPETA
+
     let cant = 0;
-    //si hay mas de una /, significa que esta dentro de una carpeta
+
     for(var i = 0; i < q.pathname.length; i++) {
   	   if (q.pathname[i] == "/")
           cant = cant+1;
@@ -35,7 +35,7 @@ http.createServer((req, res) => {
         filename = q.pathname.slice(1)
     }
 
-    //PARA ENCONTRAR EL TIPO, MIME
+
     num = q.pathname.lastIndexOf(".");
     mime = q.pathname.slice(num+1)
     mime = "text/" + mime
