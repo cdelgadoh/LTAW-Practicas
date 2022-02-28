@@ -1,86 +1,63 @@
 // Practica 1: Tienda on-line
 
-//-- Importar los modulos http, fs y url
 const http = require('http');
+const url = require('url'); //para parsear
 const fs = require('fs');
-const url = require('url');
+const PUERTO = 9090
 
-//-- Definir el puerto a utilizar
-const Puerto = 9090;
+//-- Configurar y lanzar el servidor. Por cada peticion recibida
+//-- se imprime un mensaje en la consola
+http.createServer((req, res) => {
+  console.log("----------> Peticion recibida")
+  let q = url.parse(req.url, true);
+  console.log("Recurso:" + q.pathname)
 
-//-- Mensaje de arranque
-console.log("Arrancando servidor...");
-
-//-- Crear el sevidor
-const server = http.createServer(function (req, res) {
-
-  //-- Indicar que se ha recibido una peticion
-  console.log("Peticion Recibida");
-
-  //-- Crear el objeto URL del mensaje de solitud (req)
-  //-- y coger el recurso (url)
-  let myURL = url.parse(req.url, true);
-
-  //-- Escribir en consola la ruta de nuestro recurso
-  console.log("Recurso recibido: " + myURL.pathname);
-
-  //-- Definir la variable fichero
+  //variables: filename = recurso que se pide; mime = tipo de recurso
   let filename = "";
+  let mime = "";
 
-  //-- Obtener la ruta (pathname)
-  //-- Comprobar si la ruta es elemento raiz
-  //-- Obtener fichero a devolver
-  if (myURL.pathname == "/"){
-    filename += "tienda.html";  //-- Abrir la pagina principal
+
+  if (q.pathname == "/"){
+    filename += "tienda.html"
+    mime = "text/html"
   }else{
-    filename += myURL.pathname.substr(1);  //-- Abrir el fichero solicitado
+
+    let cant = 0;
+
+    for(var i = 0; i < q.pathname.length; i++) {
+  	   if (q.pathname[i] == "/")
+          cant = cant+1;
+     }
+
+     if (cant>1){
+        filename = "." + q.pathname
+    }else{
+        filename = q.pathname.slice(1)
+    }
+
+
+    num = q.pathname.lastIndexOf(".");
+    mime = q.pathname.slice(num+1)
+    mime = "text/" + mime
   }
 
-  //-- Ruta asignada
-  console.log('Fichero a devolver: ' + filename);
-  
-  //-- Extraer el tipo de mime que es la ruta
-  //-- y quedarse con la extenson
-  let ext = filename.split(".")[1];
 
-  //-- Escribir el tipo de mime solicitado
-  console.log('Tipo de dato pedido: ' + ext);
+  //-- Leer fichero
+  fs.readFile(filename, function(err, data) {
 
-  //-- Definir los tipos de mime
-  const tiendaType = {
-    "html" : "text/html",
-    "css"  : "text/css",
-    "jpg"  : "image/jpg",
-    "JPG"  : "image/jpg",
-    "jpeg" : "image/jpeg",
-    "png"  : "image/png",
-    "gif"  : "image/gif",
-    "js"   : "text/js",
-  };
+    //-- Fichero no encontrado. Devolver mensaje de error
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/html'});
+      return res.end("404 Not Found");
+    }
 
-  //-- Asignar que tipo de mime leer
-  let tienda = tiendaType[ext];
-
-  fs.readFile(filename, function(err, data){
-    //-- Controlar si la pagina es no encontrada.
-    //-- Devolver pagina de error personalizada, 404 NOT FOUND
-    if ((err) || (filename == 'error.html')){
-      res.writeHead(404, {'Content-Type': tienda});
-      console.log("Not found");
-    }else{
-      //-- Todo correcto
-      //-- Mandar el mensaje 200 OK
-      res.writeHead(200, {'Content-Type': tienda});
-      console.log("200 OK");
-    } 
-    //-- Enviar los datos del fichero solicitado  
+    //-- Generar el mensaje de respuesta
+    res.writeHead(200, {'Content-Type': mime});
     res.write(data);
     res.end();
   });
-});
 
-//-- Activar el servidor
-server.listen(Puerto);
+}).listen(PUERTO);
 
-//-- Mensaje de inicio
-console.log("Escuchando en puerto: " + Puerto);
+console.log("Servidor corriendo...")
+console.log("Puerto: " + PUERTO)
