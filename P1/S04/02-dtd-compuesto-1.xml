@@ -1,0 +1,16 @@
+<!-- Elemento dentro de elemento -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Declaracion de la gramatica -->
+<!DOCTYPE tienda [
+    <!ELEMENT tienda (producto)>
+    <!ELEMENT producto (#PCDATA)>
+]>
+
+
+<tienda>
+    <producto>
+        Un producto
+    </producto>
+     <producto>Otro producto</producto>
+</tienda>
