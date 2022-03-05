@@ -1,0 +1,46 @@
+[
+    {
+        "productos": [
+            {
+                "nombre": "P1",
+                "stock": 4
+            },
+            {
+                "nombre": "P2",
+                "stock": 3
+            },
+            {
+                "nombre": "P3",
+                "stock": 4
+            }
+        ]
+    },
+    {
+        "usuarios":[
+            {
+                "user": "delgado",
+                "nombre": "cristina"
+            
+            },
+            {
+                "user": "usuario",
+                "nombre": "confidencial"
+            }
+        ]
+    },
+    {
+        "pedidos":[
+            {
+                "user": "usuario",
+                "productos":[
+                    {
+                        "producto": "P1"
+                    },
+                    {
+                        "producto": "P3"
+                    }
+                ]
+            }
+        ]
+    }
+]
