@@ -4,6 +4,7 @@
 <!DOCTYPE tienda SYSTEM "tienda.dtd">
 
 <tienda>
+<!-- @include "producto.xml" -->
     <producto>
         <nombre>Alhambra II</nombre>
         <descripcion>Placa con FPGA ice40HX8K</descripcion>

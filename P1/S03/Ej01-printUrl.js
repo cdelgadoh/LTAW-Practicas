@@ -1,5 +1,5 @@
 //-- Construir un objeto URL
-const myURL = new URL('http://localhost:8080/mi_tienda/listados.html?articulo=pendrive&color=blanco#descripcion');
+const myURL = new URL('https://www.amazon.es/s?k=FPGA&port=3434&v=34kdhgffj&ref=nb_sb_noss');
 
 
 //-- Imprimir la información de la URL

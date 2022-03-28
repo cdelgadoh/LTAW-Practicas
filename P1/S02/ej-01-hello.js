@@ -1,8 +1,20 @@
-//-- Programa Hola mundo en Node.js
+//-- Importar el módulo 'http'. 
+// Node incluye el modulo si lo tienes instalado 
+// y lo puedes  utilizar.
+ //declarar que los quieres usar.
 
-/* Este es un ejemplo de comentario multilínea
-   El objeto console está disponible directamente
-   desde node.js, sin tener que importar nada */
 
-//-- Imprimir un mensaje en la consola
-console.log("¡Hola Mundo!");
+
+const server = http.createServer((req,res) => {
+    res.write("Hola");
+    res.end();
+});
+
+
+//-- Activar la función de retrollamada del servidor
+
+
+//-- Activar el servidor. A la escucha de peitciones
+//-- en el puerto 8080
+server.listen(8080);
+
