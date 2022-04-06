@@ -4,7 +4,7 @@ const http = require('http');
 const express = require('express');
 const colors = require('colors');
 
-const PUERTO = 9090;
+const PUERTO = 5500;
 
 //-- Crear una nueva aplciacion web
 const app = express();
@@ -25,7 +25,7 @@ var new_user = false;
 //-- Definir el punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
   //
-  path = __dirname + '/public/index.html';
+  path = __dirname + '/chat.html';
   res.sendFile(path);
   //res.send('MINICHAT\n' + '<a href="/chat.html">Entrar</a>');
 });
