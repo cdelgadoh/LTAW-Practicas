@@ -18,3 +18,16 @@ button{
     border-width: 3px;
     border-color: white
 }
+.screen{
+    width: 60%;
+    height: 400px;
+    background-color: whitesmoke;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 10px;
+    border: 10px double black;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
