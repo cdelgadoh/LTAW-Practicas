@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
   //
   path = __dirname + '/chat.html';
   res.sendFile(path);
-  //res.send('MINICHAT\n' + '<a href="/chat.html">Entrar</a>');
+  console.log("Acceso a" + path)
 });
 
 //-- Esto es necesario para que el servidor le envíe al cliente la
@@ -43,15 +43,16 @@ io.on('connect', (socket) => {
   new_user = true;
   if (new_user == true){
     io.send("Nuevo usuario se ha unido al chat");
-    socket.send("BIENVENIDO");
+    socket.send("Bienvenido al MiniChat");
     new_user = false;
   }
-  console.log('** NUEVA CONEXIÓN **'.yellow);
+  console.log('** Nueva conexión **'.yellow);
   counter = counter + 1;
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
-    console.log('** CONEXIÓN TERMINADA **'.yellow);
+    io.send("El usuario se ha ido del chat")
+    console.log('** Conexión terminada **'.yellow);
     counter = counter - 1;
   });  
 
@@ -71,14 +72,14 @@ io.on('connect', (socket) => {
         socket.send(data);
       }else if (msg == "/date") { 
         let date = new Date(Date.now());
-        let data = "Fecha: <br>" + date;
+        let data = "Hoy es: " + date;
         socket.send(data);
       }else{
         let data = "Comando incorrecto";
         socket.send(data);
       }
     }else{
-      io.send(msg); //-- Todos
+      io.send(msg); 
     }
 
   });

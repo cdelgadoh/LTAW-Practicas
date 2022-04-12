@@ -10,6 +10,7 @@ const socket = io();
 
 socket.on("message", (msg_entry)=>{
   display.innerHTML += "<br> > " + msg_entry;
+  
 });
 
 send.onclick = () => {

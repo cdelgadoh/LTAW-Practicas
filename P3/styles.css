@@ -27,8 +27,7 @@ button{
     overflow: auto;
     border-radius: 10px;
     border: 10px double black;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+
 }
 #display{
     font-size: 20px;
