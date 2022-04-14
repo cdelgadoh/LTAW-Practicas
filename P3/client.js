@@ -18,8 +18,9 @@ send.onclick = () => {
     socket.send(msg_entry.value);
     audio.play();
   //-- Borrar el mensaje actual
-  msg_entry.value = "";
+    
 }
+
 //-- Al apretar el botón se envía un mensaje al servidor
 msg_entry.onchange = () => {
   if (msg_entry.value)
@@ -27,5 +28,5 @@ msg_entry.onchange = () => {
     audio.play();
   
   //-- Borrar el mensaje actual
-  msg_entry.value = "";
+    
 }
