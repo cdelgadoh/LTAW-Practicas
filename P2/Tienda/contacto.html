@@ -20,19 +20,26 @@
             <a href="contacto.html"><img src="Imagenes/contact.png" id="Contact"></a>
             <a href="error.html"><img src="Imagenes/logoCarro.jpg" id="Carro"></a>
         </div>
-        <div align="center" id="productos"> 
-            <br>
-            <h3>Contact me</h3>
-            <br>
-            <h5>Rellena el siguiente formulario y te responderemos lo antes posible. </h5>
-            <div class="form">
-                <form>
-                    <textarea placeholder="Name"></textarea>
-                    <textarea placeholder="Email"></textarea>
-                    <textarea id="content" placeholder="Mensaje"></textarea>
-                </form>
+
+
+        <form action="procesar" method="get">
+            <div class="backform">
+            <h2>Log in to your account</h2>
+            <div id = "identificacion">
+                <label for="nombre">Nickname: </label> 
+                <input type="text" name="nombre" size="30"/> 
             </div>
-        <button class="button" onclick="alert('Enviado')"><span> Click me! </span></button>
+            <div id= "passw">
+                <label for="pwd">Password: </label>
+                <input type="password" name="pwd" size="30" />
+            </div>
+    
+            <p></p>          
+    
+            <div class="button">
+              <button type="submit"> Send </button>
+            </div>
         </div>
+        </form>
     </body>
 </html>

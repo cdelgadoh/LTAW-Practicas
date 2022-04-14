@@ -10,20 +10,20 @@ const caja = document.getElementById("caja");
 caja.oninput = () => {
 
     //-- Crear objeto para hacer peticiones AJAX
-    const m = new XMLHttpRequest();
+    const objeto = new XMLHttpRequest();
 
     //-- Función de callback que se invoca cuando
     //-- hay cambios de estado en la petición
-    m.onreadystatechange = () => {
+    objeto.onreadystatechange = () => {
 
         //-- Petición enviada y recibida. Todo OK!
-        if (m.readyState==4) {
+        if (objeto.readyState==4) {
 
             //-- Solo la procesamos si la respuesta es correcta
-            if (m.status==200) {
+            if (objeto.status==200) {
 
                 //-- La respuesta es un objeto JSON
-                let productos = JSON.parse(m.responseText)
+                let productos = JSON.parse(objeto.responseText)
 
                 console.log(productos);
 
@@ -45,7 +45,7 @@ caja.oninput = () => {
             } else {
                 //-- Hay un error en la petición
                 //-- Lo notificamos en la consola y en la propia web
-                console.log("Error en la petición: " + m.status + " " + m.statusText);
+                console.log("Error en la petición: " + objeto.status + " " + objeto.statusText);
                 display2.innerHTML += '<p>ERROR</p>'
             }
         }
