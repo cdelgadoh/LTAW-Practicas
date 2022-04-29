@@ -2,6 +2,7 @@
 const electron = require('electron');
 
 console.log("Arrancando electron...");
+
 //-- Variable para acceder a la ventana principal
 //-- Se pone aquí para que sea global al módulo principal
 let win = null;
@@ -13,17 +14,17 @@ electron.app.on('ready', () => {
 
     //-- Crear la ventana principal de nuestra aplicación
     win = new electron.BrowserWindow({
-        width: 600,  //-- Anchura 
+        width: 600,   //-- Anchura 
         height: 600,  //-- Altura
 
         //-- Permitir que la ventana tenga ACCESO AL SISTEMA
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false
-          }
+          nodeIntegration: true,
+          contextIsolation: false
+        }
     });
 
-    //-- En la parte superior se nos ha creado el menu
+  //-- En la parte superior se nos ha creado el menu
   //-- por defecto
   //-- Si lo queremos quitar, hay que añadir esta línea
   //win.setMenuBarVisibility(false)
@@ -34,5 +35,13 @@ electron.app.on('ready', () => {
 
   //-- Cargar interfaz gráfica en HTML
   win.loadFile("index.html");
+
+  //-- Esperar a que la página se cargue y se muestre
+  //-- y luego enviar el mensaje al proceso de renderizado para que 
+  //-- lo saque por la interfaz gráfica
+  win.on('ready-to-show', () => {
+    console.log("HOLA?");
+    win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+  });
 
 });
