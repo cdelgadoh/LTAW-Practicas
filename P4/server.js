@@ -13,9 +13,14 @@ electron.app.on('ready', () => {
   // Creo una nueva ventana
   win = new electron.BrowserWindow({
     width: 600,  // Anchura 
-    height: 400  // Altura
-  }); 
-
+    height: 400, // Altura
+    
+    // Permitir acceso al sistema
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false
+    }
+  });
   // Quitar menú por defecto
   // win.setMenuBarVisibility(false)
 
