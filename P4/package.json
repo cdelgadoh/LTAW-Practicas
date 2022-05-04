@@ -1,0 +1,14 @@
+{
+    "name": "chat",
+    "description": "Mini-chat",
+    "version": "0.0.1",
+    "main": "server.js",
+    "author": "Cristina Delgado",
+    "license": "GPL-3.0",
+    "scripts": {
+        "start": "node chat-server.js"
+    },
+    "dependencies": {
+        "electron": "^18.2.0"
+    }
+}
