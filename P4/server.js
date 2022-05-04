@@ -26,4 +26,12 @@ electron.app.on('ready', () => {
 
   // Cargar el contenido
   win.loadURL("chat.html");
+
+  // La pagina se carga 
+  // aparece el mensaje por 
+  // la interfaz gráfica
+  win.on('ready-to-show', () => {
+    console.log("Hola");
+    win.webContents.send('print', "Mensaje enviado desde server.js");
+  });
 });
