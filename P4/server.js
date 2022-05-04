@@ -20,5 +20,5 @@ electron.app.on('ready', () => {
   // win.setMenuBarVisibility(false)
 
   // Cargar el contenido
-  win.loadURL('https://www.urjc.es/etsit');
+  win.loadURL("chat.html");
 });
