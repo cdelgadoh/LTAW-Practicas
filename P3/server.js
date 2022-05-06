@@ -22,6 +22,17 @@ var counter = 0;
 //--Nuevo user
 var new_user = false;
 
+function date(){
+  var fecha = new Date();
+  var d = fecha.getDate();
+  var m = fecha.getMonth()+1;
+  var y = fecha.getFullYear();
+  var h = fecha.getHours();
+  var m = fecha.getMinutes();
+  var s = fecha.getSeconds();
+  return  'Fecha:' + d + '/' + m + '/' + y + 'Hora:' + h + ':' + m + ':' + s ;
+}
+
 // PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
@@ -59,28 +70,36 @@ io.on('connect', (socket) => {
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
-    console.log("Mensaje Recibido!: " + msg.blue);
-    let split_msg = Array.from(msg);
-    if (split_msg[0] == "/"){
-      console.log("socket.send");
+    //-- Eliminamos el nick
+    realMsg = msg.split(' ')[1];
 
-      if (msg == "/list"){
-        socket.send("Número de participantes: " + counter);
-      }else if (msg == "/hello"){
-        socket.send("Hello");
-      }else if (msg == "/help") {
-        let data = "Comandos: <br><br>/help -> Provoca la muestra la lista de comandos existentes <br><br>/hello -> Provoca un saludo por parte del servidor <br><br>/list -> Provoca la visualización de la cantidad de participantes <br><br>/date -> Provoca la visualización de la fecha";
-        socket.send(data);
-      }else if (msg == "/date") { 
-        let date = new Date(Date.now());
-        let data = "Hoy es: " + date;
-        socket.send(data);
-      }else{
-        let data = "Comando incorrecto";
-        socket.send(data);
+    //-- Se recibe peticion de comando
+    if (realMsg.startsWith('/')){
+      if (realMsg == '/help'){
+        socket.send("Comandos: <br>" +
+                ">> <b>/help --> Visualización los comandos existentes<br>" +
+                ">> <b>/list --> Visualización del número de usuarios conectados<br>" +
+                ">> <b>/hello --> El servidor devuelve un saludo<br>" +
+                ">> <b>'/date --> Visualización de la fecha actual<br>");
+        console.log('/help');
+
+      } else if (realMsg == '/list'){
+          socket.send(">> Número de usuarios conectados: " + counter);
+
+      } else if (realMsg == '/hello'){
+          socket.send(">> Hello");
+
+      } else if (realMsg == "/date"){
+          socket.send('>> Hoy es: '+ date());
+          console.log('/date');
+
+      } else{
+        socket.send('>> Comando incorrecto');
       }
-    }else{
-      io.send(msg); 
+
+    } else {
+      //-- Mensaje normal, se reenvia a todos los clientes conectados
+      io.send(msg);
     }
 
   });
