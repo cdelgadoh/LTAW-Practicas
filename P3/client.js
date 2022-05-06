@@ -2,6 +2,7 @@
 const display = document.getElementById("display");
 const msg_entry = document.getElementById("msg_entry");
 const send = document.getElementById("send");
+const nick = document.getElementById("nick");
 const audio = document.getElementById("audio");
 
 //-- Crear un websocket. Se establece la conexión con el servidor
@@ -14,19 +15,17 @@ socket.on("message", (msg_entry)=>{
 });
 
 send.onclick = () => {
-  if (msg_entry.value)
-    socket.send(msg_entry.value);
+  if (msg_entry.value){
+    socket.send(nickname + ': ' + msg_entry.value);
     audio.play();
+  }
   //-- Borrar el mensaje actual
-    
+  msg_entry.value = "";  
 }
 
 //-- Al apretar el botón se envía un mensaje al servidor
 msg_entry.onchange = () => {
   if (msg_entry.value)
     socket.send(msg_entry.value);
-    audio.play();
-  
-  //-- Borrar el mensaje actual
-    
+    audio.play();   
 }
