@@ -1,20 +1,28 @@
 //-- Elementos del interfaz
 const display = document.getElementById("display");
 const msg_entry = document.getElementById("msg_entry");
-const send = document.getElementById("send");
 const nick = document.getElementById("nick");
 const audio = document.getElementById("audio");
 
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();
 
+let nickname = 'Unknown';
+
+// Nick
+nick.onchange = () => {
+  if(nick.value){
+    nickname = nick.value;
+    console.log('Nick' + nickname);
+  }
+}
 
 socket.on("message", (msg_entry)=>{
-  display.innerHTML += "<br> > " + msg_entry;
-  
+  display.innerHTML += "<br> > " + msg_entry;  
 });
 
-send.onclick = () => {
+// Enviar mensaje
+msg_entry.onclick = () => {
   if (msg_entry.value){
     socket.send(nickname + ': ' + msg_entry.value);
     audio.play();
@@ -23,9 +31,3 @@ send.onclick = () => {
   msg_entry.value = "";  
 }
 
-//-- Al apretar el botón se envía un mensaje al servidor
-msg_entry.onchange = () => {
-  if (msg_entry.value)
-    socket.send(msg_entry.value);
-    audio.play();   
-}
