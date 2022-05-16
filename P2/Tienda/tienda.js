@@ -1,8 +1,8 @@
-// Practica 1: Tienda on-line
-
+// Módulos
 const http = require('http');
 const url = require('url'); //para parsear
 const fs = require('fs');
+
 const PUERTO = 9090
 
 //-- Configurar y lanzar el servidor. Por cada peticion recibida
