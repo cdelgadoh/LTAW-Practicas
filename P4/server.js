@@ -1,5 +1,5 @@
 // Cargar electron
-const electron = require('selectron');
+const electron = require('electron');
 
 console.log("Arrancando electron...");
 
