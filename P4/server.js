@@ -1,7 +1,6 @@
 // Cargar electron
 const electron = require('electron');
 
-console.log("Arrancando electron...");
 
 // Cargar dependencias
 const socket = require('socket.io');
@@ -119,6 +118,7 @@ socket.on("message", (msg)=> {
 server.listen(PUERTO);
 console.log("Escuchando en puerto: " + PUERTO);
 
+console.log("Arrancando electron...");
 //-- Punto de entrada
 electron.app.on('ready', () => {
   console.log("Evento Ready!");
