@@ -1,0 +1,66 @@
+h1{
+    font-family: "Lucida Handwriting", cursive;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+
+}
+h3{
+    font-family: "Verdana", sans-serif;
+    color:black;
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
+#Carro{
+    width: 45px; 
+    height: 35px;
+}
+
+#Home{
+    width: 45px; 
+    height: 35px;
+}
+
+#Search{
+    width: 45px; 
+    height: 35px;
+}
+#Contact{
+    width: 45px; 
+    height: 35px;
+}
+textarea {
+    width: 40%;
+    margin-top: auto;
+    background-color: peachpuff;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: bold;
+    line-height: 1;
+    color: #666666;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px outset #1e7f83;
+    resize: none;
+}
+button {
+    background-color: #af3773;
+    opacity: 0.7;
+    border: none;
+    color: white;
+    padding: 3px 3px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#Logocarro{
+    width: 45px; 
+    height: 35px;
+
+}
+#form{
+    float: left;
+}
