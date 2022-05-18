@@ -1,17 +1,128 @@
-#right{
-    float:right;
-    width: 45%;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    height: 660px;
-    border-radius: 10px;
-}
-
-#left{
-    float:left;
-    width: 52%;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    height: 660px;
-    border-radius: 10px;
+body {
+    margin: 0;
+    padding: 0px 0 0 0;
+    top: 0;
+   background-size:auto;
+    background-position: center;
+    box-sizing: border-box;
+    margin-left: 5%;
+    margin-right: 5%;
   }
+  /* Style the header with a grey background and some padding */
+  .header{
+    /* Enable flex mode. */
+    display: grid; 
+    /* Align items vertically in the center. */
+    align-items: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    
+    margin-bottom: 2%;
+    height: 80px;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+  @media (max-width: 800px){
+    header{
+            /* Reverse the axis of the header, making it vertical. */
+            flex-direction: column;
+            position:relative;
+            /* Align items to the begining (the left) of the header. */
+            align-items: flex-start;
+            
+    }
+    
+  }
+  #right{
+   float:right;
+   width: 45%;
+   background-color: rgba(255, 255, 255, 0.7);
+   text-align: center;
+   height: 660px;
+   border-radius: 10px;
+}
+li{
+ text-align: justify;
+ font-size: 23px;
+ font-weight:lighter;
+}
+#info1,#info2, #info3, #info4, #info5, #info5, #info6{
+color: #7c0000;
+}
+#left{
+ float:left;
+ width: 52%;
+ background-color: rgba(255, 255, 255, 0.7);
+ text-align: center;
+ height: 660px;
+ border-radius: 10px;
+}
+   /* Estilo del encabezado principal, osea del título */
+   h3 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+    color:#7c0000;;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+    }
+    h2{
+      font-size: 30px;
+       margin-top: 20px;
+       margin-bottom: 20px;
+    }
+  
+    button{
+      background-color: rgb(163, 131, 83);
+      color:honeydew;
+      padding: 3px 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 30px;
+      border-radius: 15px;
+      border-width: 3px;
+      border-color: white
+    }
+  
+    button:hover {
+      background-color: #7c0000;
+      color: #a85 ;
+      border-color:  #a85;
+      border-width: 3px;
+      text-decoration: none;
+    }
+  
+    .screen{
+      width: 60%;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 0px;
+      margin: auto;
+      text-align:left;
+      margin:0 auto;
+      padding:10px;
+      overflow: auto;
+      border-radius: 20px;
+      border:black 15px solid;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+    
+
+  #display{
+    font-size: 25px;
+    margin: 0%;
+    overflow-y: scroll;
+    color: black;
+    text-align: justify;
+    margin-left: 5%;
+  }
+  
+p{
+ color: #7c0000;
+ font-size: 25px;
+ margin-top: 0%;
+ margin-bottom: 0%;
+}
