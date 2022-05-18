@@ -20,20 +20,29 @@
 <body>
     <h1>CHAT</h1>
 
-    <hr>
-    <h2>Información:</h2>
-    <ul>
-        <li>Architecture: <span id="info1" class="blue"></span> </li>
-        <li>Platform <span id="info2" class="blue"></span></li>
-        <li>Directory: <span id="info3" class="blue"></span></li>
-        <li>Version node: <span id="info4" class="blue"></span> </li>
-        <li>Version electron: <span id="info5" class="blue"></span></li>
-        <li>Version chrome: <span id="info6" class="blue"></span></li>
-    </ul>
-    <p>Messages:</p>
-    <p>Print:  <span id='print' class="red"></span> </p>
-    <p>   <input type="button" value="Test" id="btn_test"> </p>
-   <p>Display:</p>
-    <p id="display"></p>
+    <div id= left>
+        <h2>Información:</h2>
+        <ul>
+            <li>Architecture: <span id="info1" class="blue"></span> </li>
+            <li>Platform <span id="info2" class="blue"></span></li>
+            <li>Directory: <span id="info3" class="blue"></span></li>
+            <li>Version node: <span id="info4" class="blue"></span> </li>
+            <li>Version Chrome: <span id="info5" class="blue"></span></li>
+            <li>Version Electron: <span id="info6" class="blue"></span></li>
+        </ul>
+        <h2>Usuarios conectados</h2>
+            <p id="users"></p>
+        <h2>Url</h2>
+            <p id="dir"></p>
+
+        <h2>Código QR</h2>
+            <img src=" " id="qr">
+    </div>
+    <div id="right">
+        <h2>Print <span id='print' class="red"></span></h2>
+        <button type="button" id="btn_test">Enviar</button>
+        <h2>Display</h2>
+        <p id="display"></p>
+    </div>
 </body>
 </html> 

@@ -152,7 +152,7 @@ electron.app.on('ready', () => {
 //-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
 //-- renderizado. Al recibirlos se escribe una cadena en la consola
 electron.ipcMain.handle('test', (event, msg) => {
-  console.log("-> Mensaje: " + msg);
+  console.log("Mensaje: " + msg);
   io.send(msg);
   win.webContents.send('msg', msg);
 });
