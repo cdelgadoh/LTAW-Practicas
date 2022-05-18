@@ -9,10 +9,10 @@
         "colors": "^1.4.0",
         "express": "^4.17.3",
         "snake-names": "^1.0.9",
-        "socket.io": "^4.4.1",
+        "socket.io": "^4.5.1",
         "websocket": "^1.0.34"
     },
     "scripts": {
-      "start": "node chat-server.js"
+        "start": "node chat-server.js"
     }
 }
