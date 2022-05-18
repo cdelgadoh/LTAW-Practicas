@@ -9,6 +9,34 @@
         "dist": "electron-builder",
         "postinstall": "electron-builder install-app-deps"
     },
+    "electron-builder": {
+        "appId": "my-chat",
+        "category": "your.app.category.type",
+        "dmg": {
+          "contents": [
+            {
+              "x": 110,
+              "y": 150
+            },
+            {
+              "x": 240,
+              "y": 150,
+              "type": "link",
+              "path": "/Applications"
+            }
+          ]
+        },
+        "linux": {
+          "target": [
+            "AppImage"
+          ],
+          "category": "Utility"
+        },
+        "win": {
+          "target": "squirrel",
+          "icon": "build/icon.ico"
+        }
+      },
     "devDependencies": {
         "electron": "^18.2.3",
         "electron-builder": "^23.0.3"

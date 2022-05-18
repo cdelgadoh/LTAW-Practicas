@@ -39,7 +39,7 @@ btn_test.onclick = () => {
     console.log("Botón apretado!");
 
     //-- Enviar mensaje al proceso principal
-    electron.ipcRenderer.invoke('test', "Testing app: Patronus inbox");
+    electron.ipcRenderer.invoke('test', "Testing ");
 }
 //-- Mensajes de los clientes
 electron.ipcRenderer.on('msg_client', (event, message) => {
@@ -55,7 +55,7 @@ electron.ipcRenderer.on('print', (event, message) => {
 
   electron.ipcRenderer.on('ip', (event, message) => {
     console.log("Recibido: " + message);
-    dir.textContent = msg;
+    dir.textContent = message;
         
         qrcode.toDataURL(message, function (err, url) {
             console.log("Imprimiendo codigo qr");
