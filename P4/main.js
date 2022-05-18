@@ -52,30 +52,42 @@ app.use(express.static('public'));
 //------------------- GESTION SOCKETS IO
 //-- Evento: Nueva conexion recibida
 io.on('connect', (socket) => {
-  new_user = true;
-  if (new_user == true){
-    io.send("Nuevo usuario se ha unido al chat");
-    socket.send("Bienvenido al MiniChat");
-    new_user = false;
-  }
-  console.log('** Nueva conexión **'.yellow);
+  console.log('** Nueva conexión **'.yellow + socket.id);
   counter = counter + 1;
+  //-- Enviar numero de usuarios al renderer
+  win.webContents.send('users', counter);
+   socket.id =  snakeNames.random() ;
+   socket.send('Bienvenido' + "  " + socket.id + "!" );
+   win.webContents.send('msg_client', '<b> Bienvenido! </b>' + socket.id + "!" );
+  
+     //-- Enviar mensaje de nuevo usuario a todos los usuarios
+  io.send( socket.id  + "</i> " +'se unió. ');
+
+  //-- Enviar al render mensaje de conexion
+  win.webContents.send('msg_client', + socket.id  + "</i> " +'se unió. ');
+
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
     io.send("El usuario se ha ido del chat")
     console.log('** Conexión terminada **'.yellow);
     counter = counter - 1;
+    win.webContents.send('users', counter);
+
+        //-- Enviar mensaje de desconexión de usuario a todos los usuarios
+        io.send(  socket.id  + " </i> " + 'abandonó el chat. ');
+
+        //-- Enviar al render mensaje de desconexion
+        win.webContents.send('msg_client', +  socket.id  + " </i> " + 'abandonó el chat. ');
   });  
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
-    //-- Eliminamos el nick
-    realMsg = msg.split(' ')[1];
-
+     //-- Enviar al render
+     win.webContents.send('msg_client', socket.id + ': '  + msg);
     //-- Se recibe peticion de comando
-    if (realMsg.startsWith('/')){
-      if (realMsg == '/help'){
+    if (msg.startsWith('/')){
+      if (msg == '/help'){
         socket.send("Comandos: <br>" +
                 ">> <b>/help --> Visualización los comandos existentes<br>" +
                 ">> <b>/list --> Visualización del número de usuarios conectados<br>" +
@@ -83,13 +95,13 @@ io.on('connect', (socket) => {
                 ">> <b>'/date --> Visualización de la fecha actual<br>");
         console.log('/help');
 
-      } else if (realMsg == '/list'){
+      } else if (msg == '/list'){
           socket.send(">> Número de usuarios conectados: " + counter);
 
-      } else if (realMsg == '/hello'){
+      } else if (msg == '/hello'){
           socket.send(">> Hello");
 
-      } else if (realMsg == "/date"){
+      } else if (msg == "/date"){
           socket.send('>> Hoy es: '+ date());
           console.log('/date');
 
@@ -120,8 +132,8 @@ electron.app.on('ready', () => {
 
     //-- Crear la ventana principal de nuestra aplicación
     win = new electron.BrowserWindow({
-        width: 600,   //-- Anchura 
-        height: 600,  //-- Altura
+        width: 1000,   //-- Anchura 
+        height: 850,  //-- Altura
 
         //-- Permitir que la ventana tenga ACCESO AL SISTEMA
         webPreferences: {
