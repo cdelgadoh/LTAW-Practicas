@@ -37,7 +37,7 @@ body {
   #right{
    float:right;
    width: 45%;
-   background-color: rgba(255, 255, 255, 0.7);
+   background-color: rgba(202, 32, 32, 0.7);
    text-align: center;
    height: 660px;
    border-radius: 10px;
@@ -53,7 +53,7 @@ color: #7c0000;
 #left{
  float:left;
  width: 52%;
- background-color: rgba(255, 255, 255, 0.7);
+ background-color: rgba(209, 88, 88, 0.7);
  text-align: center;
  height: 660px;
  border-radius: 10px;
@@ -76,7 +76,7 @@ color: #7c0000;
   
     button{
       background-color: rgb(163, 131, 83);
-      color:honeydew;
+      color:rgb(3, 211, 3);
       padding: 3px 10px;
       text-align: center;
       text-decoration: none;
@@ -97,7 +97,7 @@ color: #7c0000;
     .screen{
       width: 60%;
       height: 400px;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(243, 35, 35, 0.9);
       padding: 0px;
       margin: auto;
       text-align:left;
