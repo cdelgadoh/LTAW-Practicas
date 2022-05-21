@@ -25,7 +25,7 @@ socket.on("message", (msg)=>{
   display.innerHTML += '<p>' + msg + '</p>';
 
   //-- Sonido al recibir mensaje expecto escribiendo...
-  if (!msg.includes("Escribiendo...")){  
+  if (!msg.includes("escribiendo...")){  
     sound.play();
   }
 });
