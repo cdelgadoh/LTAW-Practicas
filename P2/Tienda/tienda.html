@@ -19,11 +19,11 @@
       <a href="login.html"><img src="Imagenes/search.png" id="Login"></a>
       <a href="contacto.html"><img src="Imagenes/contact.png" id="Contact"></a>
       <a href="carro.html"><img src="Imagenes/logoCarro.jpg" id="Carro"></a>
-      <div id="busq"> 
-        <input type="text" placeholder="Buscar..." id="caja" autocomplete="on">
-        <a href="/buscar"><button class='button' id="boton_busq">Buscar</button></a>
+      <form id="autocompletar" action="/buscar" method="get">
+        <input type="text" id="caja" placeholder="Buscar..." name="producto">
         <p id="display1"></p>
-      </div>
+        <input id="botonbuscar" type="submit" value="Buscar">
+      </form>
     </div>
 
     <div id="Productos"> 

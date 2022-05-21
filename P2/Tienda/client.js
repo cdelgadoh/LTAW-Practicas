@@ -36,9 +36,9 @@ caja.oninput = () => {
                     //-- Añadir cada producto al párrafo de visualización
                     display1.innerHTML += productos[i];
 
-                    //-- Separamos los productos por ',''
+                    //-- Separamos los productos por lineas
                     if (i < productos.length-1) {
-                    display1.innerHTML += ', ';
+                    display1.innerHTML += '<br>';
                     }
                 }
 
@@ -53,11 +53,11 @@ caja.oninput = () => {
 
     console.log(caja.value.length);
 
-    //-- La peticion se realia solo si hay al menos 1 carácter
+    //-- La peticion se realiza solo si hay al menos 3 caracteres
     if (caja.value.length >= 3) {
 
       //-- Configurar la petición
-      m.open("GET","/productos?param1=" + caja.value, true);
+      m.open("GET","/busqueda?param1=" + caja.value, true);
 
       //-- Enviar la petición!
       m.send();
