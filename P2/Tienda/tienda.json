@@ -2,26 +2,26 @@
 
     {"productos":[
       {
-        "nombre":"Camara Canon",
-        "descripcion":"Camara digital de 18 MP",
+        "nombre":"cc",
+        "descripcion":"Camara CANON digital de 18 MP",
         "precio":"500 EUROS",
         "stock": "30"
       },
       {
-        "nombre":"Objetivo Nikon",
-        "descripcion":"Objetivo de 67 mm",
+        "nombre":"on",
+        "descripcion":"Objetivo NIKON de 67 mm",
         "precio":"700 EUROS",
         "stock": "10"
       },
       {
-        "nombre":"Tripode Manfrotto",
-        "descripcion":"Altura de 44,5 cm a 165 cm",
+        "nombre":"tm",
+        "descripcion":"Tripode Manfrotto, altura de 44,5 cm a 165 cm",
         "precio":"104 EUROS",
         "stock": "20"
       },
       {
-        "nombre":"Videocamara Panasonic",
-        "descripcion":"Videocamara de 2,2 MP",
+        "nombre":"vp",
+        "descripcion":"Videocamara Panasonic de 2,2 MP",
         "precio":"335 EUROS",
         "stock": "4"
       }]},
