@@ -12,20 +12,29 @@
         <div align="center">
             <br>
             <h1>La casa de la fotografía</h1>
-              <!-- <a href="tienda.html"><img class="image" src=""></a> -->
+            <!-- <a href="tienda.html"><Mi tienda online></a> -->
         </div>
+          
         <div align="right" id="menu">
             <a href="tienda.html"><img src="Imagenes/home.png" id="Home"></a>
-            <a href="login.html"><img src="Imagenes/user.png" id="Search"></a>
+            <a href="login.html"><img src="Imagenes/user.png" id="Login"></a>
             <a href="contacto.html"><img src="Imagenes/contact.png" id="Contact"></a>
             <a href="carro.html"><img src="Imagenes/logoCarro.jpg" id="Carro"></a>
-        </div>
-        <h2>Trípodes</h2>
-        <img src="Imagenes/Tripode1.jpg" width="350" height="250"></a>
-        <h4>Descripción:</h4>
-            DESCRIPCIONJSON
-        <form action="/carrito_tm" method="get">
-            <button id="boton" type="submit">Añadir al carrito</button>
-        </form>
+            <form id="autocompletar" action="/buscar" method="get">
+              <input type="text" id="caja" placeholder="Buscar..." name="producto">
+              <p id="display1"></p>
+              <input id="botonbuscar" type="submit" value="Buscar">
+            </form>
+          </div>
+          <div align="center">
+          <h1 id="titulo">Tripode</h1>
+          <img src="Imagenes/Tripode1.jpg" alt="tm">
+              <h4>Descripción:</h4>
+              DESCRIPCIONJSON
+              <p></p>
+              <form action="/carrito_tm" method="get">
+                  <button id="boton" type="submit">Añadir al carrito</button>
+              </form>
+              </div>
     </body>
 </html>

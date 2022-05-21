@@ -1,9 +1,9 @@
 h1{
+    background-color: bisque;
     font-family: "Lucida Handwriting", cursive;
     text-align: center;
     font-size: 30px;
     color: black;
-
 }
 h3{
     font-family: "Verdana", sans-serif;
@@ -23,7 +23,7 @@ h5{
     height: 35px;
 }
 
-#Search{
+#Login{
     width: 45px; 
     height: 35px;
 }

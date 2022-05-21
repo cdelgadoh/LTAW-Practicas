@@ -1,7 +1,10 @@
 
-h5{
-    display: inline-flex;
-
+h1{
+    background-color: bisque;
+    font-family: "Lucida Handwriting", cursive;
+    text-align: center;
+    font-size: 30px;
+    color: black;
 }
 h2{
     color: #d4f0ed;
@@ -35,7 +38,7 @@ h4{
     height: 35px;
 }
 
-#Search{
+#Login{
     width: 45px; 
     height: 35px;
 }

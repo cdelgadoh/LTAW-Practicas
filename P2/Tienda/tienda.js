@@ -70,8 +70,6 @@ const server = http.createServer((req, res) => {
     // Saco el nombre del fichero que tengo que buscar
     if (url.pathname=='/') {
         fichero = 'tienda.html';
-    } else if (url.pathname=='/favicon.ico') {
-        fichero = 'icono.png';
     } else if (url.pathname=='/productos') {
         fichero = 'tienda.json';
     } else if (url.pathname == '/login') {
@@ -85,12 +83,12 @@ const server = http.createServer((req, res) => {
         }
         if (found == true) {
             res.setHeader('Set-Cookie', "user="+nickname);
-            fichero = 'Welcome.html';
+            fichero = 'welcome.html';
         } else {
             fichero = 'login_error.html';
         }
     } else if (url.pathname == '/finalizar') {
-        fichero = 'Compra.html';
+        fichero = 'compra.html';
         direccion = url.searchParams.get('direccion');
         tarjeta = url.searchParams.get('tarjeta');
         nuevo_pedido = {"nickname": nickname,"direccion":direccion,"tarjeta":tarjeta,"producto":carrito};
@@ -180,7 +178,7 @@ const server = http.createServer((req, res) => {
                 res.setHeader('Content-Type', 'aplication/javascript');
             }
             page = data;
-            if (fichero == 'Welcome.html' || fichero == 'login_error.html' || fichero == 'login_res.html') {
+            if (fichero == 'welcome.html' || fichero == 'login_error.html' || fichero == 'login_res.html') {
                 page = page.toString().replace("USUARIO", nickname);
             } else if (fichero == 'tienda.html') {
                 if (url.pathname == '/busqueda') {

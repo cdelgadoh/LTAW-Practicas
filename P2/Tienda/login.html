@@ -6,29 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La casa de la fotografía</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <div align="center">
         <br>
-          <h1>La casa de la fotografía</h1>
-          <!-- <a href="tienda.html"><img class="image" src=""></a> -->
+        <h1>La casa de la fotografía</h1>
+        <!-- <a href="tienda.html"><Mi tienda online></a> -->
     </div>
+      
     <div align="right" id="menu">
         <a href="tienda.html"><img src="Imagenes/home.png" id="Home"></a>
         <a href="login.html"><img src="Imagenes/user.png" id="Login"></a>
         <a href="contacto.html"><img src="Imagenes/contact.png" id="Contact"></a>
         <a href="carro.html"><img src="Imagenes/logoCarro.jpg" id="Carro"></a>
-    </div>
+        <form id="autocompletar" action="/buscar" method="get">
+          <input type="text" id="caja" placeholder="Buscar..." name="producto">
+          <p id="display1"></p>
+          <input id="botonbuscar" type="submit" value="Buscar">
+        </form>
+      </div>
     <div class="content">
-
     <form action="/login" method="get">
         Nombre de usuario:
         <input type="text" id="casilla" name="user" />
-        <p></p>
-        Correo:
-        <input type="text" id="casilla" name="email"/>
-        <p></p>
+        <br>
         <input type="submit" id="boton" value="Iniciar Sesión" />
     </form>
     </div>

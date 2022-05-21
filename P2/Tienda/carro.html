@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Finalizar compra</title>
+    <link rel="stylesheet" href="estilo.css">
+    <title>La casa de la fotografía</title>
 </head>
 <body>
     <div align="center">
         <br>
-          <h1>La casa de la fotografía</h1>
-          <!-- <a href="tienda.html"><img class="image" src=""></a> -->
+        <h1>La casa de la fotografía</h1>
+        <!-- <a href="tienda.html"><Mi tienda online></a> -->
     </div>
+      
     <div align="right" id="menu">
         <a href="tienda.html"><img src="Imagenes/home.png" id="Home"></a>
         <a href="login.html"><img src="Imagenes/user.png" id="Login"></a>
         <a href="contacto.html"><img src="Imagenes/contact.png" id="Contact"></a>
         <a href="carro.html"><img src="Imagenes/logoCarro.jpg" id="Carro"></a>
-    </div>
-    <div class="main">
-        <div class="info">
-            <h3>Su compra:</h3>
-            LISTACARRITO
-            <form action="/finalizar" method="get">
-                Dirección de envío:
-                <input type="text" name="direccion"/>
-                <p></p>
-                Número de la tarjeta:
-                <input type="text" name="tarjeta"/>
-                <p></p>
-                <input id="boton" type="submit" value="Enviar">
-            </form>
+        <form id="autocompletar" action="/buscar" method="get">
+          <input type="text" id="caja" placeholder="Buscar..." name="producto">
+          <p id="display1"></p>
+          <input id="botonbuscar" type="submit" value="Buscar">
+        </form>
         </div>
-    </div>
+        <div align="center">
+          <h2>Finalizar compra</h2>
+            <div class="info">
+              <h3>Su compra:</h3>
+                LISTACARRITO
+                <form action="/finalizar" method="get">
+                    Dirección de envío:
+                    <input type="text" name="direccion"/>
+                    <br><br>
+                    Número de la tarjeta:
+                    <input type="text" name="tarjeta"/>
+                    <br><br>
+                    <input id="boton" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div> 
 </body>
 </html>
