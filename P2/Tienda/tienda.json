@@ -1,0 +1,61 @@
+[
+
+    {"productos":[
+      {
+        "nombre":"Camara Canon",
+        "descripcion":"Camara digital de 18 MP",
+        "precio":"500 EUROS",
+        "stock": "30"
+      },
+      {
+        "nombre":"Objetivo Nikon",
+        "descripcion":"Objetivo de 67 mm",
+        "precio":"700 EUROS",
+        "stock": "10"
+      },
+      {
+        "nombre":"Tripode Manfrotto",
+        "descripcion":"Altura de 44,5 cm a 165 cm",
+        "precio":"104 EUROS",
+        "stock": "20"
+      },
+      {
+        "nombre":"Videocamara Panasonic",
+        "descripcion":"Videocamara de 2,2 MP",
+        "precio":"335 EUROS",
+        "stock": "4"
+      }]},
+
+      { "usuarios":[
+        {
+          "nickname":"root_1",
+          "tipo":"root",
+          "nombre":"Root",
+          "password": "1234",
+          "email": "root@gmail.com"
+      },
+      {
+          "nickname":"crisdh",
+          "tipo":"normal",
+          "nombre":"Cristina",
+          "password": "6789",
+          "email": "cris@gmail.com"
+      }
+      ]},
+     { "pedidos":[
+        {
+          "usuario": "root_1",
+          "direccion": "Calle root, Madrid",
+          "tarjeta": "5819484394",
+          "compra":"Objetivo Nikon, Tripode Manfrotto",
+          "importe":"804 EUROS"
+        },
+        {
+          "usuario": "crisdh",
+          "direccion": "Camino del molino, Madrid ",
+          "tarjeta": "4362789280",
+          "compra":"Camara Canon",
+          "importe": "500 EUROS"
+        }
+      ]}
+  ]
