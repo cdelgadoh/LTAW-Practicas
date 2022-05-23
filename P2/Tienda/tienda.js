@@ -10,7 +10,7 @@ const pagina_error = `
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi tienda</title>
+    <title>La casa de la fotografía</title>
 </head>
 <body>
     <h1>ERROR</h1>
@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
     console.log("_____________________________________________");
     console.log("Petición recibida!");
 
-    //Valores por defecto de la respuesta
+    //-- Valores por defecto de la respuesta
     let code = 200;
     let code_msg = 'OK';
     let page = '';
@@ -51,7 +51,7 @@ const server = http.createServer((req, res) => {
     let cookie_carrito = 'carrito=';
     let carrito = [];
 
-    //Extraigo las cookies si las hay
+    //Extraigo las cookies
     cookie = req.headers.cookie;
     if (cookie) {
         let pares = cookie.split(';');
