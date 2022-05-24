@@ -3,21 +3,6 @@ const fs = require('fs');
 
 const PUERTO = 9090;
 
-const pagina_error = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La casa de la fotografía</title>
-</head>
-<body>
-    <h1>ERROR</h1>
-    <h3>Recurso no encontrado o no compatible<h3>
-</body>
-</html>
-`
 
 const FICHERO_JSON = 'tienda.json';
 let tienda_json = fs.readFileSync(FICHERO_JSON);
@@ -157,7 +142,6 @@ const server = http.createServer((req, res) => {
             code = 404;
             code_msg = "Not Found";
             res.setHeader('Content-Type', 'text/html');
-            page = pagina_error;
         } else {
             console.log("Fichero encontrado!");
             //Extraigo la extension del nombre del fichero segun cual sea
@@ -203,12 +187,12 @@ const server = http.createServer((req, res) => {
                     page = page.toString().replace(ENLACE_LOGIN, NOMBRE_USUARIO);
                 }
             } else if (fichero == 'carro.html') {
-                let LISTACARRITO = '<ul>';
+                let LISTACARRO = '<ul>';
                 carrito.forEach((element) => {
-                    LISTACARRITO += '<li>'+element+'</li>';
+                    LISTACARRO += '<li>'+element+'</li>';
                 })
-                LISTACARRITO += '</ul>';
-                page = page.toString().replace('LISTACARRITO', LISTACARRITO);
+                LISTACARRO += '</ul>';
+                page = page.toString().replace('LISTACARRO', LISTACARRO);
             } else if (fichero == 'P1.html') {
                 const DESCRIPCION = tienda.productos[0].descripcion;
                 page = page.toString().replace('DESCRIPCIONJSON', DESCRIPCION);
